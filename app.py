@@ -6,6 +6,6 @@ app = Flask(__name__)
 def index():
     return "Hello World!"
 
-@app.route("/bot")
-def getAnswers():
-    return "Esta é uma resposta do bot!!"
+@app.route("/bot/<sentence>")
+def getAnswers(sentence):
+    return "Olá, sou o Tera.py!!! Como posso ajudá-lo," + str(sentence)+ "?"
