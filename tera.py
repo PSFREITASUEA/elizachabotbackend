@@ -5,7 +5,16 @@ from dictionary import *
 
 def getAnswers(sentence):
     sentence = sentence.lower()
-    return verifyWelcomeMessage(sentence)
+    answer = ""
+
+    sentence = sentence.lower()
+    answer = verifyWelcomeMessage(sentence)
+    answer = verifyFeelings(sentence)
+
+    if answer == "":
+       return "Não sei se compreendi corretamente!"
+    else:
+        return answer
 
     
 def verifyWelcomeMessage(sentence):
@@ -13,4 +22,11 @@ def verifyWelcomeMessage(sentence):
         has_welcome_message = re.search(rf"\b(?=\w){word}\b(?!\w)", sentence)
         if has_welcome_message:
             return welcome_message[word]
+    return ""
+
+def verifyFeelings(sentence):
+    for word in feelings_message:
+        has_feelings = re.search(rf"\b(?=\w){word}\b(?!\w)", sentence)
+        if has_feelings:
+            return feelings_message[word]
     return ""
