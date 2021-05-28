@@ -1,9 +1,7 @@
 from flask import Flask
-
-from tera import Tera
+import tera
 
 app = Flask(__name__)
-tera = Tera()
 
 @app.route("/")
 def index():
@@ -11,4 +9,4 @@ def index():
 
 @app.route("/bot/<sentence>")
 def getAnswers(sentence):
-    return tera.getAnswers(tera,sentence)
+    return tera.getAnswers(sentence)
