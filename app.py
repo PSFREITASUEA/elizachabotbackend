@@ -11,4 +11,4 @@ def index():
 
 @app.route("/bot/<sentence>")
 def getAnswers(sentence):
-    return tera.getAnswers(sentence)
+    return tera.getAnswers(self,sentence)
