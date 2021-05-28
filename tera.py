@@ -8,8 +8,8 @@ def getAnswers(sentence):
     answer = ""
 
     sentence = sentence.lower()
-    answer = verifyWelcomeMessage(sentence)
-    answer = verifyFeelings(sentence)
+    answer += verifyWelcomeMessage(sentence)
+    answer += verifyFeelings(sentence)
 
     if answer == "":
        return "Não sei se compreendi corretamente!"
