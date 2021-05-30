@@ -15,3 +15,10 @@ sorry_message = {
     "me desculpe": "Não precisa se desculpar",
     "me desculpa": "Não precisa se desculpar"
 }
+
+verbs_message = [
+    "quero",
+    "desejo",
+    "vou",
+]
+
