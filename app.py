@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, json, jsonify,request
 import tera
+import time
 
 app = Flask(__name__)
 
@@ -9,4 +10,5 @@ def index():
 
 @app.route("/bot/<sentence>")
 def getAnswers(sentence):
-    return tera.getAnswers(sentence)
+    return jsonify({'response':tera.getAnswers(sentence)}) 
+
