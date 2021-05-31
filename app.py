@@ -14,7 +14,7 @@ def getAnswers(sentence):
     return jsonify({'response':tera.getAnswers(query)}) 
 
 
-@app.route("/bot_test",method = ['POST'])
+@app.route("/bot_test",method = ('POST'))
 def response():
        query = dict(request.form)['query']
        result = query + " " + time.ctime()
