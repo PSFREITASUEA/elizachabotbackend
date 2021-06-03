@@ -13,9 +13,3 @@ def index():
 def getAnswers(sentence):
     query = dict(request.form)['query']
     return jsonify({'response':tera.getAnswers(sentence)}) 
-
-
-
-
-if __name__ == "__main__":
-    app.run(debug= False)
