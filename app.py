@@ -9,13 +9,13 @@ app = Flask(__name__)
 def index():
     return "Hello World!"
 
-@app.route("/bot/<sentence>", methods=['GET', 'POST'])
+@app.route("/bot2/<sentence>", methods=['GET', 'POST'])
 def getAnswers(sentence):
     query = dict(request.form)['query']
     return jsonify({'response':tera.getAnswers(query)}) 
 
 
-@app.route("/bot2/<sentence>")
+@app.route("/bot/<sentence>")
 def getAnotherAnwsers(sentence):
     return jsonify({'response':tera.getAnswers(sentence)}) 
 
