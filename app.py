@@ -18,7 +18,7 @@ def getAnswers(sentence):
     return jsonify({'response':tera.getAnswers(query)}) 
 
 @cross_origin
-@app.route("/bot/<sentence>")
+@app.route("/bot/<sentence>",methods=['GET', 'POST'])
 def getAnotherAnwsers(sentence):
     return jsonify({'response':tera.getAnswers(sentence)}) 
 
