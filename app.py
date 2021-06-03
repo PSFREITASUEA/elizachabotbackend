@@ -20,7 +20,8 @@ def getAnswers(sentence):
 @cross_origin
 @app.route("/bot/<sentence>",methods=['GET', 'POST'])
 def getAnotherAnwsers(sentence):
-    return jsonify({'response':tera.getAnswers(sentence)}) 
+    query = dict(request.form)['query']
+    return jsonify({'response':tera.getAnswers(query)}) 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
