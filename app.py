@@ -12,7 +12,7 @@ def index():
 @app.route("/bot/<sentence>", methods=['GET', 'POST'])
 def getAnswers(sentence):
     query = dict(request.form)['query']
-    return jsonify({'response':tera.getAnswers(query)}) 
+    return jsonify({'response':tera.getAnswers(sentence)}) 
 
 
 
