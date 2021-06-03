@@ -2,10 +2,11 @@ from os import name
 import os
 from flask import Flask, json, jsonify,request
 import tera
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/")
 def index():
@@ -16,7 +17,7 @@ def getAnswers(sentence):
     query = dict(request.form)['query']
     return jsonify({'response':tera.getAnswers(query)}) 
 
-
+@cross_origin
 @app.route("/bot/<sentence>")
 def getAnotherAnwsers(sentence):
     return jsonify({'response':tera.getAnswers(sentence)}) 
